@@ -87,7 +87,6 @@ function uptime() {
 					"<tr id=\"r" + i + "\" data-toggle=\"collapse\" data-target=\"#rt" + i + "\" class=\"accordion-toggle " + hack + "\">" +
 						"<td id=\"online4\"><div class=\"progress\"><div style=\"width: 100%;\" class=\"progress-bar progress-bar-warning\"><small>加载中</small></div></div></td>" +
 						"<td id=\"name\">加载中</td>" +
-						"<td id=\"type\">加载中</td>" +
 						"<td id=\"host\">加载中</td>" +
 						"<td id=\"location\">加载中</td>" +
 						"<td id=\"uptime\">加载中</td>" +
@@ -137,7 +136,6 @@ function uptime() {
 			TableRow.children["name"].innerHTML = result.servers[i].name;
 
 			// Type
-			TableRow.children["type"].innerHTML = result.servers[i].type;
 
 			// Host
 			TableRow.children["host"].innerHTML = result.servers[i].host;
