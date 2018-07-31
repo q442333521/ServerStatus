@@ -86,13 +86,13 @@ function uptime() {
 				$("#servers").append(
 					"<tr id=\"r" + i + "\" data-toggle=\"collapse\" data-target=\"#rt" + i + "\" class=\"accordion-toggle " + hack + "\">" +
 						"<td id=\"online4\"><div class=\"progress\"><div style=\"width: 100%;\" class=\"progress-bar progress-bar-warning\"><small>加载中</small></div></div></td>" +
-						"<td id=\"name\">加载中</td>" +
+						"<td id=\"ipstatus\"><div class=\"progress\"><div style=\"width: 100%;\" class=\"progress-bar progress-bar-warning\"><small>加载中</small></div></div></td>" +
 						"<td id=\"host\">加载中</td>" +
-						"<td id=\"location\">加载中</td>" +
 						"<td id=\"uptime\">加载中</td>" +
 						"<td id=\"load\">加载中</td>" +
 						"<td id=\"network\">加载中</td>" +
 						"<td id=\"traffic\">加载中</td>" +
+						"<td id=\"connections\">加载中</td>" +
 						"<td id=\"cpu\"><div class=\"progress progress-striped active\"><div style=\"width: 100%;\" class=\"progress-bar progress-bar-warning\"><small>加载中</small></div></div></td>" +
 						"<td id=\"memory\"><div class=\"progress progress-striped active\"><div style=\"width: 100%;\" class=\"progress-bar progress-bar-warning\"><small>加载中</small></div></div></td>" +
 						"<td id=\"hdd\"><div class=\"progress progress-striped active\"><div style=\"width: 100%;\" class=\"progress-bar progress-bar-warning\"><small>加载中</small></div></div></td>" +
@@ -123,6 +123,15 @@ function uptime() {
 				TableRow.children["online4"].children[0].children[0].innerHTML = "<small>关闭</small>";
 			}
 
+			//ipstatus
+			if (result.servers[i].ip_status) {
+				TableRow.children["ipstatus"].children[0].children[0].className = "progress-bar progress-bar-success";
+				TableRow.children["ipstatus"].children[0].children[0].innerHTML = "<small>开启</small>";
+			} else {
+				TableRow.children["ipstatus"].children[0].children[0].className = "progress-bar progress-bar-danger";
+				TableRow.children["ipstatus"].children[0].children[0].innerHTML = "<small>关闭</small>";
+			}
+
 			// Online6
 			//if (result.servers[i].online6) {
 			//	TableRow.children["online6"].children[0].children[0].className = "progress-bar progress-bar-success";
@@ -133,7 +142,7 @@ function uptime() {
 			//}
 
 			// Name
-			TableRow.children["name"].innerHTML = result.servers[i].name;
+			//TableRow.children["name"].innerHTML = result.servers[i].name;
 
 			// Type
 
@@ -141,13 +150,14 @@ function uptime() {
 			TableRow.children["host"].innerHTML = result.servers[i].host;
 
 			// Location
-			TableRow.children["location"].innerHTML = result.servers[i].location;
+			//TableRow.children["location"].innerHTML = result.servers[i].location;
 			if (!result.servers[i].online4 && !result.servers[i].online6) {
 				if (server_status[i]) {
 					TableRow.children["uptime"].innerHTML = "–";
 					TableRow.children["load"].innerHTML = "–";
 					TableRow.children["network"].innerHTML = "–";
 					TableRow.children["traffic"].innerHTML = "–";
+					TableRow.children["connections"].innerHTML = "–";
 					TableRow.children["cpu"].children[0].children[0].className = "progress-bar progress-bar-danger";
 					TableRow.children["cpu"].children[0].children[0].style.width = "100%";
 					TableRow.children["cpu"].children[0].children[0].innerHTML = "<small>关闭</small>";
@@ -221,6 +231,9 @@ function uptime() {
 					trafficstr += (result.servers[i].network_out/1024/1024/1024/1024).toFixed(2) + "T";
 				TableRow.children["traffic"].innerHTML = trafficstr;
 
+				// connections
+				TableRow.children["connections"].innerHTML = result.servers[i].connections;
+
 				// CPU
 				if (result.servers[i].cpu >= 90)
 					TableRow.children["cpu"].children[0].children[0].className = "progress-bar progress-bar-danger";
@@ -275,12 +288,15 @@ function uptime() {
 				var ExpandRow = $("#servers #rt" + i);
 				TableRow.children["online4"].children[0].children[0].className = "progress-bar progress-bar-error";
 				TableRow.children["online4"].children[0].children[0].innerHTML = "<small>错误</small>";
+				TableRow.children["ipstatus"].children[0].children[0].className = "progress-bar progress-bar-error";
+				TableRow.children["ipstatus"].children[0].children[0].innerHTML = "<small>错误</small>";
 				//TableRow.children["online6"].children[0].children[0].className = "progress-bar progress-bar-error";
 				//TableRow.children["online6"].children[0].children[0].innerHTML = "<small>错误</small>";
 				TableRow.children["uptime"].innerHTML = "<div class=\"progress progress-striped active\"><div style=\"width: 100%;\" class=\"progress-bar progress-bar-error\"><small>错误</small></div></div>";
 				TableRow.children["load"].innerHTML = "<div class=\"progress progress-striped active\"><div style=\"width: 100%;\" class=\"progress-bar progress-bar-error\"><small>错误</small></div></div>";
 				TableRow.children["network"].innerHTML = "<div class=\"progress progress-striped active\"><div style=\"width: 100%;\" class=\"progress-bar progress-bar-error\"><small>错误</small></div></div>";
 				TableRow.children["traffic"].innerHTML = "<div class=\"progress progress-striped active\"><div style=\"width: 100%;\" class=\"progress-bar progress-bar-error\"><small>错误</small></div></div>";
+				TableRow.children["connections"].innerHTML = "<div class=\"progress progress-striped active\"><div style=\"width: 100%;\" class=\"progress-bar progress-bar-error\"><small>错误</small></div></div>";	
 				TableRow.children["cpu"].children[0].children[0].className = "progress-bar progress-bar-error";
 				TableRow.children["cpu"].children[0].children[0].style.width = "100%";
 				TableRow.children["cpu"].children[0].children[0].innerHTML = "<small>错误</small>";

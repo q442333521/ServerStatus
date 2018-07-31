@@ -58,6 +58,8 @@ class CMain
 			int64_t m_HDDUsed;
 			double m_CPU;
 			char m_aCustom[512];
+			bool m_IPStatus;
+			int64_t m_Connections;
 			// Options
 			bool m_Pong;
 		} m_Stats;

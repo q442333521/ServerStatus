@@ -19,6 +19,31 @@ import os
 import json
 import collections
 import psutil
+import commands
+
+#========自定义的内容==========
+#是否被墙https://github.com/cppla/ServerStatus的代码
+def ip_status():
+	object_check = ['www.10010.com', 'www.189.cn', 'www.10086.cn']
+	ip_check = 0
+	for i in object_check:
+		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		s.settimeout(1)
+		try:
+			s.connect((i, 80))
+		except:
+			ip_check += 1
+		s.close()
+		del s
+	if ip_check >= 2:
+		return False
+	else:
+		return True
+#连接数
+def get_connections():
+	(status, output) = commands.getstatusoutput("netstat -s -t | grep 'connections established' | awk '{print $1}'")
+	return int(output)
+
 
 def get_uptime():
 	return int(time.time() - psutil.boot_time())
@@ -151,6 +176,9 @@ if __name__ == '__main__':
 				MemoryTotal, MemoryUsed = get_memory()
 				SwapTotal, SwapUsed = get_swap()
 				HDDTotal, HDDUsed = get_hdd()
+				#=====自己加的
+				IPStatus=ip_status()
+				Connections=get_connections()
 
 				array = {}
 				if not timer:
@@ -172,6 +200,8 @@ if __name__ == '__main__':
 				array['network_tx'] = NetTx
 				array['network_in'] = NET_IN
 				array['network_out'] = NET_OUT
+				array['ip_status'] = IPStatus
+				array['connections'] = Connections
 
 				s.send("update " + json.dumps(array) + "\n")
 		except KeyboardInterrupt:
