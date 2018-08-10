@@ -41,7 +41,7 @@ def ip_status():
 		return True
 #连接数
 def get_connections():
-	(status, output) = commands.getstatusoutput("netstat -s -t | grep 'connections established' | awk '{print $1}'")
+	(status, output) = commands.getstatusoutput("netstat -natu|grep ESTABLISHED |grep ::ffff:|awk '{print $4}'|sort|uniq| wc -l")
 	return int(output)
 
 
