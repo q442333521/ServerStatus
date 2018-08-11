@@ -8,7 +8,7 @@ SERVER = "127.0.0.1"
 PORT = 35601
 USER = "USER"
 PASSWORD = "USER_PASSWORD"
-INTERVAL = 30 # 更新间隔
+INTERVAL = 1 # 更新间隔
 
 
 import socket
