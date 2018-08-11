@@ -42,7 +42,7 @@ def ip_status():
 #连接数
 def get_connections():
 	(status, output) = commands.getstatusoutput("netstat -natu|grep ESTABLISHED | wc -l")
-	return int(output/2)
+	return int(int(output)/2)
 
 
 def get_uptime():
