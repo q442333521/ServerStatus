@@ -8,7 +8,7 @@ SERVER = "127.0.0.1"
 PORT = 35601
 USER = "USER"
 PASSWORD = "USER_PASSWORD"
-INTERVAL = 1 # 更新间隔
+INTERVAL = 30 # 更新间隔
 
 
 import socket
@@ -41,8 +41,8 @@ def ip_status():
 		return True
 #连接数
 def get_connections():
-	(status, output) = commands.getstatusoutput("netstat -natu|grep ESTABLISHED |grep ::ffff:|awk '{print $4}'|sort|uniq| wc -l")
-	return int(output)
+	(status, output) = commands.getstatusoutput("netstat -natu|grep ESTABLISHED | wc -l")
+	return int(output/2)
 
 
 def get_uptime():
