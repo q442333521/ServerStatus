@@ -41,7 +41,8 @@ def ip_status():
 		return True
 #连接数
 def get_connections():
-	(status, output) = commands.getstatusoutput("ss -s | awk '/estab/{a=gensub(/.*estab ([0-9]+),.*/,\"\\1\",1,$0);print a}'")
+	cg="ss -s | awk '/estab/{a=gensub(/.*estab ([0-9]+),.*/,\"\\\\1\",1,$0);print a}'"
+	(status, output) = commands.getstatusoutput(cg)
 	return int(int(output)/2)
 
 
