@@ -18,34 +18,49 @@ tr.even.expandRow > :hover { background: #2F2F2F !important; }
 tr.odd.expandRow > :hover { background: #000 !important; }
 .expandRow > td { padding: 0 !important; border-top: 0px !important; }
 #cpu, #ram, #hdd, #network, #traffic { min-width: 55px; max-width: 100px; }
-/*
+
 @media only screen and (max-width: 992px) {
-	#host, tr td:nth-child(3)			{ display:none; visibility:hidden; }
-	#location, tr td:nth-child(4)		{ display:none; visibility:hidden; }
+	#uptime, tr td:nth-child(4)			{ display:none; visibility:hidden; }
+	#traffic, tr td:nth-child(7)	{ display:none; visibility:hidden; }
+	#load, tr td:nth-child(5)	{ display:none; visibility:hidden; }
+
 }
-*/
+
 @media only screen and (max-width: 720px) {
-	#host, tr td:nth-child(3)			{ display:none; visibility:hidden; }
-	#location, tr td:nth-child(4)		{ display:none; visibility:hidden; }
+	#online4, tr td:nth-child(1)			{ display:none; visibility:hidden; }	
+	#uptime, tr td:nth-child(4)			{ display:none; visibility:hidden; }
+	#traffic, tr td:nth-child(7)	{ display:none; visibility:hidden; }
+	#load, tr td:nth-child(5)	{ display:none; visibility:hidden; }
+	#cpu, tr td:nth-child(9) 					{ display:none; visibility:hidden; }
+	#ram, tr td:nth-child(10) 					{ display:none; visibility:hidden; }
+	#hdd, tr td:nth-child(11) 					{ display:none; visibility:hidden; }
 }
 @media only screen and (max-width: 600px) {
-	#host, tr td:nth-child(3)			{ display:none; visibility:hidden; }
-	#location, tr td:nth-child(4)		{ display:none; visibility:hidden; }
-	#uptime, tr td:nth-child(5)			{ display:none; visibility:hidden; }
+	#online4, tr td:nth-child(1)			{ display:none; visibility:hidden; }
+	#uptime, tr td:nth-child(4)			{ display:none; visibility:hidden; }
+	#traffic, tr td:nth-child(7)	{ display:none; visibility:hidden; }
+	#load, tr td:nth-child(5)	{ display:none; visibility:hidden; }
+	#cpu, tr td:nth-child(9) 					{ display:none; visibility:hidden; }
+	#ram, tr td:nth-child(10) 					{ display:none; visibility:hidden; }
+	#hdd, tr td:nth-child(11) 					{ display:none; visibility:hidden; }	
 }
 @media only screen and (max-width: 533px) {
-	#host, tr td:nth-child(3)			{ display:none; visibility:hidden; }
-	#location, tr td:nth-child(4)		{ display:none; visibility:hidden; }
-	#uptime, tr td:nth-child(5)			{ display:none; visibility:hidden; }
-	#network, tr td:nth-child(7)		{ display:none; visibility:hidden; }
+	#online4, tr td:nth-child(1)			{ display:none; visibility:hidden; }
+	#uptime, tr td:nth-child(4)			{ display:none; visibility:hidden; }
+	#traffic, tr td:nth-child(7)	{ display:none; visibility:hidden; }
+	#load, tr td:nth-child(5)	{ display:none; visibility:hidden; }
+	#cpu, tr td:nth-child(9) 					{ display:none; visibility:hidden; }
+	#ram, tr td:nth-child(10) 					{ display:none; visibility:hidden; }
+	#hdd, tr td:nth-child(11) 					{ display:none; visibility:hidden; }
 }
 @media only screen and (max-width: 450px) {
 	body								{ font-size: 10px; }
 	.content 							{ padding: 0; }
-	#name, tr td:nth-child(2)			{ min-width: 10px; max-width: 25px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
-	#host, tr td:nth-child(3)			{ display:none; visibility:hidden; }
-	#location, tr td:nth-child(4)		{ display:none; visibility:hidden; }
-	#uptime, tr td:nth-child(5)			{ display:none; visibility:hidden; }
-	#network, tr td:nth-child(7)		{ display:none; visibility:hidden; }
-	#cpu, #ram, #hdd { min-width: 25px; max-width: 50px; }
+	#online4, tr td:nth-child(1)			{ display:none; visibility:hidden; }
+	#uptime, tr td:nth-child(4)			{ display:none; visibility:hidden; }
+	#traffic, tr td:nth-child(7)	{ display:none; visibility:hidden; }
+	#load, tr td:nth-child(5)	{ display:none; visibility:hidden; }
+	#cpu, tr td:nth-child(9) 					{ display:none; visibility:hidden; }
+	#ram, tr td:nth-child(10) 					{ display:none; visibility:hidden; }
+	#hdd, tr td:nth-child(11) 					{ display:none; visibility:hidden; }
 }
