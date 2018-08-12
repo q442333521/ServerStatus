@@ -11,8 +11,9 @@ RUN cp -rf /ServerStatus/web/* /usr/share/nginx/html/
 WORKDIR /ServerStatus/server
 
 RUN make
-RUN pwd && ls -a
 
 EXPOSE 80 3561
 
-CMD nohup sh -c '/etc/init.d/nginx start && /ServerStatus/server/sergate --config=/ServerStatus/server/config.json --port=3561 --web-dir=/usr/share/nginx/html'
+RUN chmod +x /ServerStatus/init.sh
+
+ENTRYPOINT ["/ServerStatus/init.sh"]
