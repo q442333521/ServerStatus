@@ -1,6 +1,6 @@
-if !$USERNAME
+if [ $USERNAME ]
 then
-	if $PASSWORD
+	if [ ! $PASSWORD ]
 	then
 		PASSWORD="91yun"
 	fi
