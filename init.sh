@@ -1,3 +1,4 @@
+#!/bin/bash
 if [ $USERNAME ]
 then
 	if [ ! $PASSWORD ]
