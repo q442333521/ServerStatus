@@ -10,3 +10,7 @@ then
 fi
 
 nohup /etc/init.d/nginx start && /ServerStatus/server/sergate --config=/ServerStatus/server/config.json --port=3561 --web-dir=/usr/share/nginx/html
+
+
+/etc/init.d/nginx start 
+nohup /ServerStatus/server/sergate --config=/ServerStatus/server/config.json --port=3561 --web-dir=/usr/share/nginx/html &
