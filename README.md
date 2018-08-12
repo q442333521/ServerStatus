@@ -74,6 +74,19 @@ password可以所有客户端都一样，但是username必须确保所有客户�
 docker start sss
 ```
 
+五、进阶应用：添加需要用户名和密码登录才能查看的功能
+创建docker镜像的时候，增加两个参数 USERNAME和PASSWORD
+```
+docker create --name=sss \
+--restart=always \
+-v /home/ServerStatus/config.json:/ServerStatus/server/config.json \
+-p 3561:3561 \
+-p 80:80 \
+-e "USERNAME=admin" \
+-e "PASSWORD=91yun" \
+rongdede/serverstatus:server
+```
+
 【客户端配置】
 ```
 yum -y install epel-release
