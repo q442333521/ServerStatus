@@ -21,23 +21,28 @@ import psutil
 import commands
 
 #========自定义的内容==========
-#是否被墙https://github.com/cppla/ServerStatus的代码
+#是否被墙
 def ip_status():
-	object_check = ['www.10010.com', 'www.189.cn', 'www.10086.cn']
+	#14.215.177.39是百度的ip
+	#123.125.115.110 也是百度的ip
+	#117.136.190.162 10086的ip
+
+	object_check = ['123.125.115.110', '14.215.177.39', '117.136.190.162']
 	ip_check = 0
 	for i in object_check:
 		s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		s.settimeout(1)
 		try:
 			s.connect((i, 80))
+			ip_check=1
+			break
 		except:
-			ip_check += 1
+			continue
 		s.close()
-		del s
-	if ip_check >= 2:
-		return False
-	else:
+	if ip_check==1:
 		return True
+	else:
+		return False
 #连接数
 def get_connections():
 	cg="ss -s | awk '/estab/{a=gensub(/.*estab ([0-9]+),.*/,\"\\\\1\",1,$0);print a}'"
