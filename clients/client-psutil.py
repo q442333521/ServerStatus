@@ -47,7 +47,7 @@ def ip_status():
 def get_connections():
 	cg="ss -s | awk '/estab/{a=gensub(/.*estab ([0-9]+),.*/,\"\\\\1\",1,$0);print a}'"
 	(status, output) = commands.getstatusoutput(cg)
-	return int(int(output)/2)
+	return int(output)
 
 
 def get_uptime():
