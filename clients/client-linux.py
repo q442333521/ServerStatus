@@ -4,10 +4,10 @@
 # 支持操作系统： Linux, OSX, FreeBSD, OpenBSD and NetBSD, both 32-bit and 64-bit architectures
 
 
-SERVER = "127.0.0.1"
+SERVER = "n43.6662228.xyz"
 PORT = 35601
-USER = "USER" 
-PASSWORD = "USER_PASSWORD"
+USER = "1" 
+PASSWORD = "1"
 INTERVAL = 1 #更新间隔
 
 
