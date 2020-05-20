@@ -1,37 +1,62 @@
 {"servers":
 	[
 		{
-			"username": "s01",
-			"name": "Mainserver 1",
-			"type": "Dedicated Server",
-			"host": "GenericServerHost123",
-			"location": "Austria",
-			"password": "some-hard-to-guess-copy-paste-password"
+			"username": "1",
+			"name": "770hk",
+			"type": "xen",
+			"host": "763hk",
+			"location": "cn",
+			"password": "1"
 		},
 		{
-			"username": "bs01",
-			"name": "Backupserver 1",
-			"type": "Virtual Server",
-			"host": "GenericVPSHost123",
-			"location": "Switzerland",
-			"password": "some-harder-to-guess-copy-paste-password"
+			"username": "2",
+			"name": "770tw",
+			"type": "vmware",
+			"host": "sjp",
+			"location": "jp",
+			"password": "1"
 		},
 		{
-			"disabled": true,
-			"username": "hidden",
-			"name": "Secret",
+			"username": "3",
+			"name": "j4105",
 			"type": "Nothing",
-			"host": "Noone",
-			"location": "Nowhere",
-			"password": "thanks doge"
+			"host": "755tw",
+			"location": "fr",
+			"password": "1"
 		},
 		{
-			"username": "butt",
-			"name": "Butt",
-			"type": "Cloud Server",
-			"host": "God",
-			"location": "Heaven??!",
-			"password": "some-even-harder-to-guess-copy-paste-password"
+			"username": "4",
+			"name": "758hk",
+			"type": "Nothing",
+			"host": "758hk",
+			"location": "fr",
+			"password": "1"
+		},
+		{
+			"username": "5",
+			"name": "758tw",
+			"type": "ssss",
+			"host": "758tw",
+			"location": "ssss",
+			"password": "1"
+		},
+		{
+			"username": "6",
+			"name": "hassion1",
+			"type": "ssss",
+			"host": "hassion1",
+			"location": "ssss",
+			"password": "1"
+		},
+		{
+			"username": "7",
+			"name": "pi",
+			"type": "ssss",
+			"host": "pi",
+			"location": "ssss",
+			"password": "1"
 		}
+
+
 	]
 }
