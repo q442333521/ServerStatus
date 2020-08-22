@@ -2,7 +2,7 @@
 	[
 		{
 			"username": "1",
-			"name": "770hk",
+			"name": "sjhN1",
 			"type": "xen",
 			"host": "763hk",
 			"location": "cn",
@@ -10,22 +10,30 @@
 		},
 		{
 			"username": "2",
-			"name": "770tw",
+			"name": "j4105",
 			"type": "vmware",
-			"host": "sjp",
+			"host": "j4105",
 			"location": "jp",
 			"password": "1"
 		},
 		{
 			"username": "3",
-			"name": "j4105",
+			"name": "pi",
+			"type": "vmware",
+			"host": "pi",
+			"location": "jp",
+			"password": "1"
+		},		
+		{
+			"username": "778tw",
+			"name": "778tw-main",
 			"type": "Nothing",
-			"host": "755tw",
+			"host": "778tw",
 			"location": "fr",
 			"password": "1"
 		},
 		{
-			"username": "4",
+			"username": "758hk",
 			"name": "758hk",
 			"type": "Nothing",
 			"host": "758hk",
@@ -33,26 +41,18 @@
 			"password": "1"
 		},
 		{
-			"username": "5",
-			"name": "758tw",
+			"username": "775hk",
+			"name": "775hk",
 			"type": "ssss",
-			"host": "758tw",
+			"host": "775hk",
 			"location": "ssss",
 			"password": "1"
 		},
 		{
-			"username": "6",
-			"name": "hassion1",
+			"username": "778sg",
+			"name": "775hk",
 			"type": "ssss",
-			"host": "hassion1",
-			"location": "ssss",
-			"password": "1"
-		},
-		{
-			"username": "7",
-			"name": "pi",
-			"type": "ssss",
-			"host": "pi",
+			"host": "775hk",
 			"location": "ssss",
 			"password": "1"
 		}
